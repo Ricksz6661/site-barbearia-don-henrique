@@ -1,0 +1,72 @@
+import sqlite3
+
+# Criar banco de dados e tabelas
+conn = sqlite3.connect("banco.db")
+cursor = conn.cursor()
+
+# Tabela serviços
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS servicos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    valor REAL NOT NULL
+)
+""")
+
+# Tabela clientes
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS clientes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    telefone TEXT NOT NULL,
+    email TEXT NOT NULL,
+    observacao TEXT
+)
+""")
+
+# Tabela horários
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS horarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    horario TEXT NOT NULL
+)
+""")
+
+# Tabela agendamentos
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS agendamentos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cliente_id INTEGER,
+    horario TEXT,
+    servicos TEXT,
+    valor REAL,
+    data TEXT,
+    FOREIGN KEY(cliente_id) REFERENCES clientes(id)
+)
+""")
+
+# Tabela feedbacks
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS feedbacks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT,
+    comentario TEXT,
+    estrelas INTEGER,
+    resposta TEXT
+)
+""")
+
+# Tabela admin
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS admin (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    usuario TEXT NOT NULL,
+    senha TEXT NOT NULL
+)
+""")
+
+# Inserir login padrão do admin
+cursor.execute("INSERT OR IGNORE INTO admin (id, usuario, senha) VALUES (1, 'barber', '3466400')")
+
+conn.commit()
+conn.close()
