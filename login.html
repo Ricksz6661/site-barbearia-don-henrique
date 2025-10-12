@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Login Administrador - Don Henrique Barbearia</title>
+<style>
+body { font-family: Arial, sans-serif; background:#1b1b1b; color:white; display:flex; justify-content:center; align-items:center; height:100vh; }
+form { background:#333; padding:30px; border-radius:10px; text-align:center; }
+input { padding:10px; margin:10px 0; width:200px; border-radius:5px; border:none; }
+button { padding:10px 20px; border:none; border-radius:5px; background:#6d4c41; color:white; cursor:pointer; }
+button:hover { background:#8d6e63; }
+</style>
+</head>
+<body>
+<form id="loginForm">
+  <h2>Login Administrador</h2>
+  <input type="text" id="usuario" placeholder="Usuário" required><br>
+  <input type="password" id="senha" placeholder="Senha" required><br>
+  <button type="submit">Entrar</button>
+</form>
+
+<script>
+// Definindo login e senha padrão
+if(!localStorage.getItem("adminUser")) {
+  localStorage.setItem("adminUser", JSON.stringify({usuario:"barber", senha:"3466400"}));
+}
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const {usuario, senha} = JSON.parse(localStorage.getItem("adminUser"));
+  const u = document.getElementById("usuario").value;
+  const s = document.getElementById("senha").value;
+  if(u === usuario && s === senha){
+    window.location.href = "admin.html"; // redireciona para painel admin
+  } else {
+    alert("Usuário ou senha incorretos!");
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>DON HENRIQUE BARBEARIA - Cliente</title>
+  <link rel="icon" href="./imagens/Logotipo.png">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <style>
+  body {
+    /* Define a imagem de fundo usando a função URL */
+    background-image: url('./imagens/Fundo.png.png'); /* Substitua com o caminho correto */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center;  /* Centraliza a imagem */
+    background-size: cover;      /* Garante que a imagem cubra toda a área */
+    /* Outras propriedades CSS podem ser adicionadas aqui */
+  }
+</style>
+<header>
+  <button onclick="window.location.href='login.html'" style="background:#6d4c41; color:white; border:none; padding:8px 12px; border-radius:5px; cursor:pointer; margin-left:10px;">Login Administrador</button>
+
+
+  <div class="logo">
+    <img src="./imagens/Logotipo.png" alt="Logo">
+    <h1>DON HENRIQUE BARBEARIA</h1>
+  </div>
+  <div class="social-buttons">
+    <button onclick="window.open('https://wa.me/message/ACUBMQAL2UKCM1', '_blank')">
+      <img src="./imagens/whatsapp1.png" alt="WhatsApp"> WhatsApp
+    </button>
+    <button onclick="window.open('https://www.instagram.com/don.henrique.barbearia', '_blank')">
+      <img src="./imagens/instagram1.png" alt="Instagram"> Instagram
+    </button>
+  </div>
+</header>
+
+<form id="agendamentoForm">
+  <h2>Agende seu Horário</h2>
+  <input type="text" id="nome" placeholder="Seu nome" required>
+  <input type="tel" id="telefone" placeholder="Celular" required>
+  <input type="email" id="email" placeholder="Email" required>
+
+  <div class="servicosContainer" id="servicosContainer">
+    <p><strong>Escolha os serviços:</strong></p>
+  </div>
+
+  <select id="horario" required>
+    <option value="">Selecione o horário</option>
+  </select>
+  <button type="submit">Confirmar Serviços</button>
+</form>
+
+<div class="pix" id="pixContainer">
+  <h2>Pagamento via Pix</h2>
+  <p>Valor total: R$ <span id="valorTotal">0</span></p>
+  <img src="./imagens/qrcode.png" alt="QR Code Pix" width="200"><br>
+  <p>Chave Pix: <span id="pixKey">12ebb94d-0132-4516-9efd-7eb382e4d6fc</span></p>
+  <button onclick="copiarPix()">Copiar Chave Pix</button>
+</div>
+
+<section>
+  <h2>Feedback</h2>
+  <input type="text" id="feedbackNome" placeholder="Seu nome" required>
+  <textarea id="feedbackComentario" placeholder="Deixe seu comentário" required></textarea>
+  <select id="feedbackEstrelas">
+    <option value="5">⭐⭐⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="1">⭐</option>
+  </select>
+  <button onclick="enviarFeedback()">Enviar Feedback</button>
+</section>
+
+<script src="./js/cliente.js" defer></script>
+</body>
+</html>

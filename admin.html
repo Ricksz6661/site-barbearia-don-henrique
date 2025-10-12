@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Administrador - Barbearia</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <style>
+  body {
+    /* Define a imagem de fundo usando a função URL */
+    background-image: url('./imagens/Fundo.png.png'); /* Substitua com o caminho correto */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center;  /* Centraliza a imagem */
+    background-size: cover;      /* Garante que a imagem cubra toda a área */
+    /* Outras propriedades CSS podem ser adicionadas aqui */
+  }
+</style>
+<header>Painel do Administrador - Barbearia</header>
+<div class="section-container">
+
+<!-- Serviços -->
+<section id="servicosSection">
+<h2>Serviços</h2>
+<div>
+<input type="text" id="novoServicoNome" placeholder="Nome do Serviço">
+<input type="number" id="novoServicoValor" placeholder="Valor R$">
+<button onclick="adicionarServico()">Adicionar Serviço</button>
+</div>
+<table id="tabelaServicos"><thead><tr><th>Serviço</th><th>Valor</th><th>Ações</th></tr></thead><tbody></tbody></table>
+</section>
+
+<!-- Clientes -->
+<section id="clientesSection">
+<h2>Clientes</h2>
+<div>
+<input type="text" id="novoClienteNome" placeholder="Nome">
+<input type="tel" id="novoClienteTelefone" placeholder="Telefone">
+<input type="email" id="novoClienteEmail" placeholder="Email">
+<input type="text" id="novaObservacao" placeholder="Observação/Nota">
+<button onclick="adicionarCliente()">Adicionar Cliente</button>
+</div>
+<table id="tabelaClientes"><thead><tr><th>Nome</th><th>Telefone</th><th>Email</th><th>Observação</th><th>Ações</th></tr></thead><tbody></tbody></table>
+</section>
+
+<!-- Horários -->
+<section id="horariosSection">
+<h2>Horários</h2>
+<div>
+<input type="text" id="novoHorario" placeholder="Novo horário (ex: 09:00)">
+<button onclick="adicionarHorario()">Adicionar Horário</button>
+</div>
+<table id="tabelaHorarios"><thead><tr><th>Horário</th><th>Ações</th></tr></thead><tbody></tbody></table>
+</section>
+
+<!-- Agendamentos e lucros -->
+<section id="agendamentosSection">
+<h2>Agendamentos e Lucros</h2>
+<p>Lucro Diário: R$ <span id="lucroDiario">0</span> | Lucro Semanal: R$ <span id="lucroSemanal">0</span> | Lucro Mensal: R$ <span id="lucroMensal">0</span></p>
+<table id="tabelaAgendamentos"><thead><tr><th>Cliente</th><th>Serviços</th><th>Valor</th><th>Horário</th><th>Ações</th></tr></thead><tbody></tbody></table>
+<button onclick="baixarRelatorio('diario')">Baixar Relatório Diário</button>
+<button onclick="baixarRelatorio('semanal')">Baixar Relatório Semanal</button>
+<button onclick="baixarRelatorio('mensal')">Baixar Relatório Mensal</button>
+</section>
+
+<!-- Feedbacks -->
+<section id="feedbacksSection">
+<h2>Feedbacks</h2>
+<table id="tabelaFeedbacks"><thead><tr><th>Nome</th><th>Comentário</th><th>Estrelas</th><th>Resposta</th><th>Ações</th></tr></thead><tbody></tbody></table>
+</section>
+
+</div>
+
+<script src="./js/admin.js" defer></script>
+</body>
+</html>
