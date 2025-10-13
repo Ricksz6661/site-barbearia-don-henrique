@@ -1,6 +1,9 @@
 body { font-family: Arial, sans-serif; margin:0; padding:0; background:#1b1b1b; color:#fff; transition:0.3s;}
 header { display:flex; align-items:center; justify-content:space-between; padding:20px; background: rgba(0,0,0,0.6); text-align:center;}
 header .logo { display:flex; align-items:center; }
+.botao {
+      text-align: center;
+    }
 header .logo img { width:60px; margin-right:10px;}
 header .social-buttons { display:flex; gap:10px; }
 header .social-buttons button { display:flex; align-items:center; gap:5px; background:#6d4c41; border:none; padding:8px 12px; border-radius:5px; cursor:pointer; transition:0.3s; color:white; font-weight:bold;}
@@ -8,9 +11,9 @@ header .social-buttons button:hover { background:#8d6e63; transform:scale(1.05);
 header .social-buttons img { width:20px; height:20px; }
 form { background: rgba(51,51,51,0.85); margin: 30px auto; padding: 20px; border-radius: 10px; max-width:500px; }
 input, select, textarea { width:90%; margin:8px 0; padding:10px; border-radius:5px; border:none; }
-button { background:#6d4c41; color:white; border:none; padding:10px 20px; margin-top:10px; cursor:pointer; border-radius:5px; transition:0.3s; align-items: center; display: block; margin: 0 auto; }
+button { background:#6d4c41; color:white; border:none; padding:10px 20px; margin-top:10px; cursor:pointer; border-radius:5px; transition:0.3s; }
 button:hover { background:#8d6e63; transform:scale(1.05);}
-.servicosContainer { text-align:left; margin:10px 0; background: rgba(0,0,0,0.4); padding:10px; border-radius:5px; display:flex; flex-direction:column; }
+.servicosContainer { text-align:center; margin:10px 0; background: rgba(0,0,0,0.4); padding:10px; border-radius:5px; display:flex; flex-direction:column; }
 .servicosContainer label { display:flex; align-items:center; gap:10px; margin:5px 0; padding:5px 10px; border-radius:5px; cursor:pointer; background: rgba(255,255,255,0.05); transition:0.3s; }
 .servicosContainer label:hover { background: rgba(255,255,255,0.1); }
 .servicosContainer input[type="checkbox"] { width:18px; height:18px; margin:0;}
